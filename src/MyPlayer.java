@@ -45,7 +45,7 @@ public class MyPlayer {
                         board[1] = e;
                         board[2] = g;
 
-                        System.out.println(board[0] + ", " + board[1] + ", " + board[2]);
+//                        System.out.println(board[0] + ", " + board[1] + ", " + board[2]);
 
                         ResultBoard(r, e, g);
 
@@ -55,12 +55,44 @@ public class MyPlayer {
         }
     }
 
+    //Chomp these balls
     public void ResultBoard(int r, int e, int g) {
-        for (int i = 1; i < 3; i++) {
-            System.out.println(r + "" + e + "" + (g - i));
-        }
 
-        for (int)
+        int[] board = new int[3];
+        board[0] = r;
+        board[1] = e;
+        board[2] = g;
+
+        System.out.println("Original board: " + r + " " + e + " " + g);
+
+        for (int i = g - 1; i >= 0; i--) {
+
+            System.out.println(r + ", " + e + ", " + i);
+
+        } // right
+
+
+        for (int i = e - 1; i >= 0; i--) {
+            if (g > i) {
+                g = i;
+            }
+            System.out.println(r + ", " + i + ", " + g);
+
+        }//middle column
+
+        g = board[2];
+        for (int i = r - 1; i >= 1; i--) {
+            if (e > i) {
+                e = i;
+            }
+            if (g > i) {
+                g = i;
+            }
+            System.out.println(i + ", " + e + ", " + g);
+
+        }//left column
+
+        //System.out.println("New board: " + board[0] + ", " + board[1] + ", " + board[2]);
     }
 
 }

@@ -70,9 +70,7 @@ public class Chomp implements Runnable, MouseListener {
 
         setUpGraphics();
 
-        board = new Chip[3][3];
-
-        //board = new Chip[10][10];
+        board = new Chip[10][10];
         for (int r = 0; r < board[0].length; r++) {
             for (int c = 0; c < board[0].length; c++) {
                 board[r][c] = new Chip(r, c, xOffset, yOffset, chipWidth);
@@ -92,7 +90,8 @@ public class Chomp implements Runnable, MouseListener {
 
 //*******************************************************************************
 //User Method Section
-
+//
+// put your code to do things here.
 
     public void updateBoard(int rowParameter, int columnParameter) {
         int row = rowParameter;
@@ -181,7 +180,7 @@ public class Chomp implements Runnable, MouseListener {
                 //g.drawRect(board[r][c].xpos,board[r][c].ypos,chipWidth,chipWidth);
             }
         }
-        
+
         if (gameOver) {
             g.setColor(Color.blue);
             g.setFont(new Font("TimesRoman", Font.BOLD, 70));
@@ -314,7 +313,6 @@ public class Chomp implements Runnable, MouseListener {
                         board[r][c].isAlive = false;
                     }
                 }
-
               */
             }
         });
